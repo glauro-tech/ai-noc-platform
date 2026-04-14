@@ -1,0 +1,20 @@
+groups:
+  - name: basic-alerts
+    rules:
+      - alert: InstanceDown
+        expr: up == 0
+        for: 15s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Target caído"
+          description: "Un servicio monitoreado no responde."
+
+      - alert: HighCPU
+        expr: rate(node_cpu_seconds_total{mode="idle"}[1m]) < 0.20
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU alta"
+          description: "Uso elevado de CPU detectado."
