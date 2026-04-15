@@ -1,0 +1,8 @@
+route:
+  receiver: webhook
+
+receivers:
+  - name: webhook
+    webhook_configs:
+      - url: http://ai-analyzer:5000/webhook
+        send_resolved: true

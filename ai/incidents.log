@@ -1,0 +1,1 @@
+{"time": "2026-04-14T23:47:49.314233", "alert": "InstanceDown", "result": {"cause": "Servicio detenido o no accesible", "severity": "critical", "action": "restart node-exporter"}}
